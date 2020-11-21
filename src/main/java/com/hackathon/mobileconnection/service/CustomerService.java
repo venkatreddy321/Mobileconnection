@@ -1,6 +1,10 @@
 package com.hackathon.mobileconnection.service;
 
+import java.util.Optional;
+
+import com.hackathon.mobileconnection.dto.CustomerRequestDto;
 import com.hackathon.mobileconnection.dto.CustomerResponseDto;
+import com.hackathon.mobileconnection.dto.ResponseDto;
 import com.hackathon.mobileconnection.exception.CustomerRequestNotFoundException;
 
 /**
@@ -20,4 +24,8 @@ public interface CustomerService {
 	 * @throws CustomerRequestNotFoundException will throw if the request not found.
 	 */
 	public CustomerResponseDto getCustomerRequests(Long requestId) throws CustomerRequestNotFoundException;
+
+
+	public Optional<ResponseDto> obtainConnection(CustomerRequestDto CustomerDto);
+
 }

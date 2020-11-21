@@ -1,47 +1,44 @@
-package com.hackathon.mobileconnection.entity;
+package com.hackathon.mobileconnection.dto;
+import java.time.LocalDateTime;
 
-import java.time.LocalDate;
+import com.sun.istack.NotNull;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import lombok.Getter;
+import lombok.Setter;
 
-import lombok.Data;
-
-@Entity
-@Data
-@Table(name="customer")
-public class Customer {
-
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private  Long customerId;
+@Getter
+@Setter
+public class CustomerRequestDto {
+	@NotNull
+	//@Pattern(regexp = "^[a-zA-Z0-9_#$%&’*+/=?^.-]+(?:\\\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\\\.)+[a-zA-Z]{2,7}$")
 	private  String name;
-	private  LocalDate dateOfBirth;
+	@NotNull
+	private  LocalDateTime dateOfBirth;
+	@NotNull
 	private  String idProof;
+	@NotNull
 	private  String idProofType;
+	@NotNull
 	private  String address;
+	@NotNull
 	private  String emailId;
+	@NotNull
 	private  String mobNumber;
+	@NotNull
 	private String altMobNumber;
-	public Long getCustomerId() {
-		return customerId;
-	}
-	public void setCustomerId(Long customerId) {
-		this.customerId = customerId;
-	}
+	@NotNull
+	private Long planId;
+	
 	public String getName() {
 		return name;
 	}
 	public void setName(String name) {
 		this.name = name;
 	}
-	public LocalDate getDateOfBirth() {
+	public LocalDateTime getDateOfBirth() {
 		return dateOfBirth;
 	}
-	public void setDateOfBirth(LocalDate dateOfBirth) {
+	public void setDateOfBirth(LocalDateTime dateOfBirth) {
 		this.dateOfBirth = dateOfBirth;
 	}
 	public String getIdProof() {
@@ -80,6 +77,11 @@ public class Customer {
 	public void setAltMobNumber(String altMobNumber) {
 		this.altMobNumber = altMobNumber;
 	}
-	
-	
+	public Long getPlanId() {
+		return planId;
+	}
+	public void setPlanId(Long planId) {
+		this.planId = planId;
+	}
+
 }
