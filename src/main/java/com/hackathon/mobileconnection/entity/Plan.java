@@ -20,4 +20,36 @@ public class Plan {
 	private String description;
 	private Double price;
 	
+	public Long getPlanId() {
+		return planId;
+	}
+	public void setPlanId(Long planId) {
+		this.planId = planId;
+	}
+	public String getPlanType() {
+		return planType;
+	}
+	public void setPlanType(String planType) {
+		this.planType = planType;
+	}
+	public Integer getValidity() {
+		return validity;
+	}
+	public void setValidity(Integer validity) {
+		this.validity = validity;
+	}
+	public String getDescription() {
+		return description;
+	}
+	public void setDescription(String description) {
+		this.description = description;
+	}
+	public Double getPrice() {
+		return price;
+	}
+	public void setPrice(Double price) {
+		this.price = price;
+	}
+	
+	
 }
