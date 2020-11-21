@@ -22,7 +22,7 @@ public class CustomerRequest {
 	private LocalDateTime requestDate;
 	private Long planId;
 	private Long customerId;
-	private Connection status;
+	private String status;
 	private LocalDateTime updatedOn;
 	private String comments;
 
@@ -66,12 +66,12 @@ public class CustomerRequest {
 	}
 
 
-	public Connection getStatus() {
+	public String getStatus() {
 		return status;
 	}
 
 
-	public void setStatus(Connection status) {
+	public void setStatus(String status) {
 		this.status = status;
 	}
 

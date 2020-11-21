@@ -43,7 +43,7 @@ public class CustomerServiceTest {
 		customerRequest.setComments("pending for approve");
 		customerRequest.setPlanId(1l);
 		customerRequest.setRequestId(1l);
-		customerRequest.setStatus(Connection.IN_PROGRESS);
+		customerRequest.setStatus(Connection.IN_PROGRESS.toString());
 		customerRequest.setUpdatedOn(LocalDateTime.now());
 		
 		customerResponseDto=new CustomerResponseDto();

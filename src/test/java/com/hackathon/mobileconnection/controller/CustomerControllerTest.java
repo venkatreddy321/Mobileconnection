@@ -3,7 +3,7 @@ package com.hackathon.mobileconnection.controller;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.util.Optional;
 
 import org.junit.jupiter.api.BeforeAll;
@@ -19,7 +19,6 @@ import org.springframework.http.ResponseEntity;
 
 import com.hackathon.mobileconnection.dto.CustomerRequestDto;
 import com.hackathon.mobileconnection.dto.ResponseDto;
-import com.hackathon.mobileconnection.entity.CustomerRequest;
 import com.hackathon.mobileconnection.service.CustomerService;
 
 @ExtendWith(MockitoExtension.class)
@@ -42,7 +41,7 @@ public class CustomerControllerTest {
 		customerRequestDto = new CustomerRequestDto();
 		customerRequestDto.setAddress("bangalore");
 		customerRequestDto.setAltMobNumber("99999");
-		customerRequestDto.setDateOfBirth(LocalDateTime.now());
+		customerRequestDto.setDateOfBirth(LocalDate.now());
 		customerRequestDto.setEmailId("vensee@gmail.com");
 		customerRequestDto.setIdProof("aadhaer");
 		customerRequestDto.setIdProofType("doc");
