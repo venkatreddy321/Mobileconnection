@@ -8,6 +8,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.hackathon.mobileconnection.util.Connection;
+
 import lombok.Data;
 
 @Entity
@@ -26,6 +28,7 @@ public class Customer {
 	private  String emailId;
 	private  String mobNumber;
 	private String altMobNumber;
+
 	public Long getCustomerId() {
 		return customerId;
 	}
