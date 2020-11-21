@@ -61,9 +61,10 @@ public class CustomerServiceImpl implements CustomerService {
 		Customer cust = customerRepository.save(customer);
 		CustomerRequest customerRequest = new CustomerRequest();
 		customerRequest.setPlanId(CustomerDto.getPlanId());
-		customerRequest.setStatus("in progress");
+		customerRequest.setStatus("In Progress");
 		customerRequest.setUpdatedOn(LocalDateTime.now());
 		customerRequest.setCustomerId(cust.getCustomerId());
+		customerRequest.setRequestDate(LocalDateTime.now());
 		CustomerRequest customerRequestresult = customerRequestRepository.save(customerRequest);
 		
 		ResponseDto responseDto = new ResponseDto();

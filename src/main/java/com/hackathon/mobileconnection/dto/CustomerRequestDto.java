@@ -1,4 +1,5 @@
 package com.hackathon.mobileconnection.dto;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 import com.sun.istack.NotNull;
@@ -13,7 +14,7 @@ public class CustomerRequestDto {
 	//@Pattern(regexp = "^[a-zA-Z0-9_#$%&’*+/=?^.-]+(?:\\\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\\\.)+[a-zA-Z]{2,7}$")
 	private  String name;
 	@NotNull
-	private  LocalDateTime dateOfBirth;
+	private  LocalDate dateOfBirth;
 	@NotNull
 	private  String idProof;
 	@NotNull
@@ -35,10 +36,11 @@ public class CustomerRequestDto {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public LocalDateTime getDateOfBirth() {
+
+	public LocalDate getDateOfBirth() {
 		return dateOfBirth;
 	}
-	public void setDateOfBirth(LocalDateTime dateOfBirth) {
+	public void setDateOfBirth(LocalDate dateOfBirth) {
 		this.dateOfBirth = dateOfBirth;
 	}
 	public String getIdProof() {
