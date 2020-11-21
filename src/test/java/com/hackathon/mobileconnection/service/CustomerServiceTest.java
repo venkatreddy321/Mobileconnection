@@ -20,6 +20,7 @@ import com.hackathon.mobileconnection.dto.CustomerResponseDto;
 import com.hackathon.mobileconnection.entity.CustomerRequest;
 import com.hackathon.mobileconnection.exception.CustomerRequestNotFoundException;
 import com.hackathon.mobileconnection.repository.CustomerRequestRepository;
+import com.hackathon.mobileconnection.util.Connection;
 
 @ExtendWith(MockitoExtension.class)
 @TestInstance(Lifecycle.PER_CLASS)
@@ -42,7 +43,7 @@ public class CustomerServiceTest {
 		customerRequest.setComments("pending for approve");
 		customerRequest.setPlanId(1l);
 		customerRequest.setRequestId(1l);
-		customerRequest.setStatus("In progress");
+		customerRequest.setStatus(Connection.IN_PROGRESS);
 		customerRequest.setUpdatedOn(LocalDateTime.now());
 		
 		customerResponseDto=new CustomerResponseDto();

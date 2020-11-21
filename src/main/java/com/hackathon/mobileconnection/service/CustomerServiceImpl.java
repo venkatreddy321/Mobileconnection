@@ -15,6 +15,7 @@ import com.hackathon.mobileconnection.entity.CustomerRequest;
 import com.hackathon.mobileconnection.exception.CustomerRequestNotFoundException;
 import com.hackathon.mobileconnection.repository.CustomerRepository;
 import com.hackathon.mobileconnection.repository.CustomerRequestRepository;
+import com.hackathon.mobileconnection.util.Connection;
 import com.hackathon.mobileconnection.util.MobileConstants;
 
 import lombok.extern.slf4j.Slf4j;
@@ -57,11 +58,12 @@ public class CustomerServiceImpl implements CustomerService {
 	@Override
 	public Optional<ResponseDto> obtainConnection(CustomerRequestDto CustomerDto) {
 		Customer customer = new Customer();
+		
 		BeanUtils.copyProperties(CustomerDto, customer);
 		Customer cust = customerRepository.save(customer);
 		CustomerRequest customerRequest = new CustomerRequest();
 		customerRequest.setPlanId(CustomerDto.getPlanId());
-		customerRequest.setStatus("In Progress");
+		customerRequest.setStatus(Connection.IN_PROGRESS);
 		customerRequest.setUpdatedOn(LocalDateTime.now());
 		customerRequest.setCustomerId(cust.getCustomerId());
 		customerRequest.setRequestDate(LocalDateTime.now());

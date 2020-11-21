@@ -8,6 +8,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.hackathon.mobileconnection.util.Connection;
+
 import lombok.Data;
 @Entity
 @Data
@@ -20,13 +22,10 @@ public class CustomerRequest {
 	private LocalDateTime requestDate;
 	private Long planId;
 	private Long customerId;
-	
-	private String status;
-	
+	private Connection status;
 	private LocalDateTime updatedOn;
 	private String comments;
-	
-	
+
 	public Long getRequestId() {
 		return requestId;
 	}
@@ -67,12 +66,12 @@ public class CustomerRequest {
 	}
 
 
-	public String getStatus() {
+	public Connection getStatus() {
 		return status;
 	}
 
 
-	public void setStatus(String status) {
+	public void setStatus(Connection status) {
 		this.status = status;
 	}
 
